@@ -1,0 +1,69 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    padding: 20px  30px;
+    background-color: #303F9F;
+}
+
+.main-nav {
+    font-size: 1.5rem;
+}
+
+.main-nav a {
+    margin-right: 5px;
+    color: #FFFFFF;
+}
+
+.search-div{
+    margin: 20px auto;
+    width: 30%;
+}
+
+.search-input{
+    width: 100%;
+    height: 20px;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+    padding: 10px;
+    outline: none;
+}
+
+
+.pet-list{
+    display: flex;
+    padding: 30px;
+}
+
+.statement{
+    margin-right: 50px;
+    width: 300px;
+    border: 1px solid #BDBDBD;
+}
+.statement-title{
+    text-align: center;
+}
+.statement-img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    border-width: 1px;
+    border-color: #BDBDBD;
+    border-top-style: solid;
+    border-bottom-style: solid;
+}
+
+.statement-description{
+    padding: 0 5px;
+}
+.author-info{
+    font-size: 0.8rem;
+    color: grey;
+    padding: 0 5px;
+}
