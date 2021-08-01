@@ -15,10 +15,7 @@ body{
     font-size: 1.5rem;
 }
 
-.main-nav a {
-    margin-right: 5px;
-    color: #FFFFFF;
-}
+
 
 .search-div{
     margin: 20px auto;
@@ -66,4 +63,10 @@ body{
     font-size: 0.8rem;
     color: grey;
     padding: 0 5px;
+}
+
+.main-nav a {
+    margin-right: 5px;
+    color: #FFFFFF!important;
+    text-decoration: none;
 }
