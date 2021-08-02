@@ -1,5 +1,5 @@
 class Statement{
-    constructor(title, contactPersonName, contactPersonNumber, address, description, pet, price, img){
+    constructor(title, contactPersonName, contactPersonNumber, address, description, pet, price, img, ){
         this.title = title;
         this.contactPersonName = contactPersonName;
         this.contactPersonNumber = contactPersonNumber;

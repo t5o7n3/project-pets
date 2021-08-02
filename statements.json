@@ -1,0 +1,15 @@
+{
+  "statements": [
+    {
+      "id": 1,
+      "title": "ჩუქდება შავი კნუტი",
+      "img": "https://i1.pickpik.com/photos/762/159/803/cat-putties-kitten-cute-preview.jpg",
+      "address": "თბილისი",
+      "pet": "კატა",
+      "description": "ძალიან საყვარელია",
+      "price": 0,
+      "contactPersonName": "ცოტნე",
+      "contactPersonNumber": "555900909"
+    }
+  ]
+}

@@ -3,16 +3,24 @@ const searchBtn = document.querySelector('.search-btn');
 const searchInput = document.querySelector('.search-input');
 
 
-// const statement1 = new Statement('ჩუქდება თეთრი კნუტი 1 თვის','ლუკა','69999988978456','თბილისი','არის საყვარელი', null, 0, 'https://images.unsplash.com/photo-1561389881-0dc69054475b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80');
-
-// const statement2 = new Statement('ჩუქდება თეთრი კნუტი 1 თვის','გიორგი','99999999999956','რუსთავი','არის ცელქი და საყვარელი', null, 0, 'https://i.pinimg.com/originals/1d/5c/8e/1d5c8e2a6eb1af906f19ebd68bcecc91.jpg');
-// const statement3 = new Statement('იყიდება თეთრი კნუტი 1 თვის','გიორგი','99999999999956','რუსთავი','არის ცელქი და საყვარელი', null, 0, 'https://i.pinimg.com/originals/1d/5c/8e/1d5c8e2a6eb1af906f19ebd68bcecc91.jpg');
-
-// const statementArray = [statement1,statement2,statement3];
-
 const statementsAsString = localStorage.getItem('statements');
 const statementsAsArray = JSON.parse(statementsAsString);
 
+let statements = [];
+
+const getStatements = ()=>{
+    $.ajax({
+        method: "GET",
+        url: "http://localhost:3000/statements",
+        
+    })
+    .done(function(data) {
+        statements = data;
+        appendAllStatements(data);
+    });
+};
+
+getStatements();
 
 const appendStatement = (statement) =>{
     const statementTemplate =
@@ -21,8 +29,12 @@ const appendStatement = (statement) =>{
                 <p class="statement-title">${statement.title}</p>
                 <img class="statement-img" src=${statement.img} alt="">
                 <p class="statement-description">${statement.description}</p>
+                <p class="author-info">ქალაქი: ${statement.address}</p>
+                <p class="author-info">შინაური ცხოველი: ${statement.pet}</p>
+                <p class="author-info">ფასი(₾): ${statement.price}</p>
                 <p class="author-info">ავტორის სახელი: ${statement.contactPersonName}</p>
                 <p class="author-info">საკონტაქტო ნომერი: ${statement.contactPersonNumber}</p>
+                
 
         </div>`;
     
@@ -32,6 +44,7 @@ const appendStatement = (statement) =>{
 
 
 const appendAllStatements = (statements) =>{
+    petList.innerHTML= '';
     for (const statementP of statements) {
         appendStatement(statementP);
     };
@@ -39,24 +52,30 @@ const appendAllStatements = (statements) =>{
     
 };
 
-
-
 searchBtn.addEventListener('click', () =>{
     petList.innerHTML = '';
     if(searchInput.value === ''){
-        appendAllStatements(statementsAsArray);
+        appendAllStatements(statements);
         return;
     };
 
-    const filterArray = statementsAsArray.filter((statement)=>{
-        if(statement.title.includes(searchInput.value)){
-            return true;
-        }else {
-            return false;
-        };
+    const filterArray = statements.filter((statement)=>{
+       return statement.title.includes(searchInput.value);
     });
 
     appendAllStatements(filterArray)
 });
 
-appendAllStatements(statementsAsArray);
+
+const deleteStatement = (id
+    ) =>{
+        $.ajax({
+            method:"DELETE",
+            url: `http://localhost:3000/statements/${id}`,
+        })
+        .done(function(data) {
+            statements = data;
+            alert('statement has been deleted');
+            getStatements();
+        });
+};
