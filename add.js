@@ -21,7 +21,7 @@ addBtn.addEventListener('click', () =>{
     const priceInputVal = priceInput.value;
 
     if (titleInputVal === '' || imageInputVal === '' || descriptionVal === '' || contactPersonNameInputVal === '' || contactPersonNumberInputVal === ''|| addressInputVal === '' || priceInputVal === '') {
-        alert('Do not left empty field')
+        alert('აუცილებელია ყველა ველის შევსება')
         return false;
     }else {
         const newStatement = new Statement(titleInput.value,contactPersonNameInput.value, contactPersonNumberInput.value, null, description.value, null, null, imageInput.value);

@@ -1,10 +1,49 @@
 .add-form{
     margin-top: 50px;
-    width: 50%;
+    width: 25%;
     margin-left:  auto;
     margin-right:  auto;
 }
 
+.add-form-div{
+    margin: 0 auto;
+}
+
+.add-form-input{
+    width: 100%;
+    margin-top: 5px;
+    outline: none;
+    height: 30px;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+}
+
+.add-form-label{
+    display: block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.add-form-btn{
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    height: 45px;
+    width:200px;
+    background-color: #303F9F;
+    color: white;
+    outline: none;
+    border: 1px solid #BDBDBD;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 .form-title{
     text-align: center;
+}
+
+
+#pet{
+    width: 28%;
 }
